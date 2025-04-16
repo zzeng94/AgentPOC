@@ -1,5 +1,7 @@
 import asyncio
 from agents import Agent, Runner
+from server import get_latest_transactions
+import re
 
 # Define individual agents
 spanish_agent = Agent(
@@ -15,6 +17,7 @@ english_agent = Agent(
 bigquery_agent = Agent(
     name="BigQuery agent",
     instructions="You handle blockchain transaction queries. When provided a wallet address, retrieve and display recent transaction details.",
+    
 )
 
 # Triage agent routes queries based on content
